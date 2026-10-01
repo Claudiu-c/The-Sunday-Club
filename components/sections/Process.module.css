@@ -1,0 +1,261 @@
+.section {
+  padding: clamp(44px, 5vw, 72px) 5%;
+  background: var(--emerald);
+  color: var(--cream);
+}
+
+.inner {
+  max-width: 1600px;
+  margin-inline: auto;
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgb(248 244 239 / 30%);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 36px 0;
+}
+
+.eyebrow {
+  margin: 0 0 20px;
+  color: var(--gold);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.intro h2 {
+  margin: 0;
+  font-size: clamp(2.8rem, 4.5vw, 5.2rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+.intro h2 em {
+  color: var(--pink);
+  font-weight: 400;
+}
+
+.introCopy {
+  max-width: 320px;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(18px, 2.5vw, 36px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  min-width: 0;
+  padding-top: 18px;
+  border-top: 1px solid rgb(248 244 239 / 40%);
+}
+
+.number {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--gold);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.step h3 {
+  margin: 0;
+  font-size: clamp(1.3rem, 1.7vw, 2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.step p {
+  max-width: 260px;
+  margin: 12px 0 0;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.footnote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(248 244 239 / 30%);
+}
+
+.footnote > span {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footnote a {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 44px;
+  color: var(--cream);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-transform: uppercase;
+}
+
+.footnote a span {
+  transition: transform 250ms ease;
+}
+
+.footnote a:hover span {
+  transform: translate(3px, -3px);
+}
+
+.footnote a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+}
+
+/* Explicațiile complete de pe /approach */
+
+.detailed .steps {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+.detailed .step {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px 0;
+}
+
+.detailed .number {
+  margin: 6px 0 0;
+}
+
+.detailed .step h3 {
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+}
+
+.detailed .step p {
+  max-width: 600px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1000px) {
+  .intro {
+    align-items: start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .introCopy {
+    max-width: 460px;
+  }
+
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 42px 22px 48px;
+  }
+
+  .topline {
+    font-size: 0.6rem;
+  }
+
+  .topline span:last-child {
+    display: none;
+  }
+
+  .intro {
+    margin: 30px 0;
+    gap: 20px;
+  }
+
+  .intro h2 {
+    font-size: clamp(2.6rem, 9.5vw, 4rem);
+  }
+
+  .introCopy {
+    font-size: 0.9rem;
+  }
+
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .step,
+  .detailed .step {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 14px;
+    padding: 18px 0;
+  }
+
+  .number,
+  .detailed .number {
+    margin: 5px 0 0;
+  }
+
+  .step h3,
+  .detailed .step h3 {
+    font-size: 1.7rem;
+  }
+
+  .step p {
+    max-width: none;
+    margin-top: 7px;
+    font-size: 0.85rem;
+  }
+
+  .detailed .step p {
+    font-size: 0.9rem;
+  }
+
+  .footnote {
+    align-items: start;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footnote a span {
+    transition: none;
+  }
+
+  .footnote a:hover span {
+    transform: none;
+  }
+}

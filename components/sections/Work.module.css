@@ -1,0 +1,286 @@
+.section {
+  padding: clamp(44px, 5vw, 72px) 5%;
+  background: var(--cream);
+  color: var(--emerald);
+}
+
+.inner {
+  max-width: 1600px;
+  margin-inline: auto;
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgb(14 92 74 / 30%);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(36px, 7vw, 110px);
+  margin-top: clamp(32px, 4vw, 56px);
+}
+
+.visual {
+  width: 100%;
+  max-width: 390px;
+  margin: 0;
+  justify-self: center;
+}
+
+.imageFrame {
+  padding: 12px;
+  background: var(--pink);
+}
+
+.imageWrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--cream);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 800ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.imageWrap:hover .image {
+  transform: scale(1.035);
+}
+
+.caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 12px;
+  font-size: 0.65rem;
+  line-height: 1.5;
+}
+
+.caption span:last-child {
+  font-size: 1rem;
+}
+
+.copy {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.heading {
+  margin: 22px 0 28px;
+  font-size: clamp(2.8rem, 4.5vw, 5.2rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+.heading em {
+  color: #ac777a;
+  font-weight: 400;
+}
+
+.description {
+  max-width: 490px;
+  margin: 0 0 16px;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.detail {
+  max-width: 490px;
+  margin: 0;
+  color: var(--black);
+  font-size: 0.93rem;
+  line-height: 1.75;
+}
+
+.privateNote {
+  max-width: 490px;
+  margin: 22px 0 0;
+  padding-left: 16px;
+  border-left: 2px solid var(--pink);
+  color: var(--black);
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  min-height: 50px;
+  margin-top: 26px;
+  padding: 15px 20px;
+  background: var(--emerald);
+  color: var(--cream);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
+}
+
+.cta:hover {
+  background: var(--pink);
+  color: var(--emerald);
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--emerald);
+  outline-offset: 5px;
+}
+
+.availability {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.63rem;
+  line-height: 1.5;
+}
+
+.requestSection {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid rgb(14 92 74 / 30%);
+}
+
+.requestSection > h2 {
+  margin: 0 0 28px;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.stepNumber {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.steps h3 {
+  margin: 16px 0 12px;
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.steps p {
+  max-width: 370px;
+  margin: 0;
+  color: var(--black);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 42px 22px 48px;
+  }
+
+  .topline {
+    font-size: 0.6rem;
+  }
+
+  .topline span:last-child {
+    display: none;
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .copy {
+    order: -1;
+  }
+
+  .eyebrow {
+    font-size: 0.6rem;
+  }
+
+  .heading {
+    margin: 20px 0 24px;
+    font-size: clamp(2.4rem, 9vw, 4rem);
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .detail {
+    font-size: 0.9rem;
+  }
+
+  .visual {
+    max-width: 340px;
+  }
+
+  .imageFrame {
+    padding: 9px;
+  }
+
+  .cta {
+    width: 100%;
+  }
+
+  .requestSection {
+    margin-top: 36px;
+    padding-top: 28px;
+  }
+
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .steps > div {
+    padding-top: 16px;
+    border-top: 1px solid rgb(14 92 74 / 22%);
+  }
+
+  .steps h3 {
+    margin-top: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .cta {
+    transition: none;
+  }
+
+  .imageWrap:hover .image {
+    transform: none;
+  }
+}
