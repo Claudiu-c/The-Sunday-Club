@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Work.module.css";
+import { ArrowUpRightIcon } from "@/components/ui/Icons";
 
 type WorkProps = {
   variant?: "preview" | "page";
@@ -34,7 +35,9 @@ export default function Work({ variant = "preview" }: WorkProps) {
 
             <figcaption className={styles.caption}>
               <span>A glimpse of The Sunday Club.</span>
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ArrowUpRightIcon />
+              </span>
             </figcaption>
           </figure>
 
@@ -69,7 +72,9 @@ export default function Work({ variant = "preview" }: WorkProps) {
 
             <Link href={isPage ? "/contact" : "/work"} className={styles.cta}>
               {isPage ? "Request our portfolio" : "Discover our work"}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ArrowUpRightIcon />
+              </span>
             </Link>
 
             <span className={styles.availability}>

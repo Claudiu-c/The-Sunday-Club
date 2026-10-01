@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ContactPreview.module.css";
+import { ArrowUpRightIcon } from "@/components/ui/Icons";
 
 export default function ContactPreview() {
   return (
@@ -54,7 +55,9 @@ export default function ContactPreview() {
 
             <Link href="/contact" className={styles.cta}>
               Join the club
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ArrowUpRightIcon />
+              </span>
             </Link>
 
             <a href="mailto:hello@thesundayclub.info" className={styles.email}>

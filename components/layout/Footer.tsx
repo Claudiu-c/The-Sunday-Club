@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import { ArrowUpRightIcon, ArrowUpIcon } from "@/components/ui/Icons";
 
 const links = [
   { label: "Services", href: "/services" },
@@ -17,7 +18,10 @@ export default function Footer() {
           <p>THE SUNDAY CLUB / CREATIVE SOCIAL MEDIA AGENCY</p>
 
           <a href="#" className={styles.backToTop}>
-            Back to top <span aria-hidden="true">↑</span>
+            Back to top{" "}
+            <span aria-hidden="true">
+              <ArrowUpIcon />
+            </span>
           </a>
         </div>
 
@@ -25,7 +29,10 @@ export default function Footer() {
           <p>Creating brands people want to be part of.</p>
 
           <Link href="/contact" className={styles.cta}>
-            Join the club <span aria-hidden="true">↗</span>
+            Join the club{" "}
+            <span aria-hidden="true">
+              <ArrowUpRightIcon />
+            </span>
           </Link>
         </div>
 
@@ -49,7 +56,10 @@ export default function Footer() {
               rel="noopener noreferrer"
               aria-label="The Sunday Club on Instagram (opens in a new tab)"
             >
-              Instagram <span aria-hidden="true">↗</span>
+              Instagram{" "}
+              <span aria-hidden="true">
+                <ArrowUpRightIcon />
+              </span>
             </a>
 
             <a
@@ -58,7 +68,10 @@ export default function Footer() {
               rel="noopener noreferrer"
               aria-label="The Sunday Club on TikTok (opens in a new tab)"
             >
-              TikTok <span aria-hidden="true">↗</span>
+              TikTok{" "}
+              <span aria-hidden="true">
+                <ArrowUpRightIcon />
+              </span>
             </a>
           </nav>
 

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./About.module.css";
+import { ArrowUpRightIcon } from "@/components/ui/Icons";
 
 type AboutProps = {
   variant?: "preview" | "page";
@@ -47,7 +48,9 @@ export default function About({ variant = "preview" }: AboutProps) {
 
             <Link className={styles.link} href={isPage ? "/contact" : "/about"}>
               {isPage ? "Come say hello" : "Meet the people"}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ArrowUpRightIcon />
+              </span>
             </Link>
           </div>
 

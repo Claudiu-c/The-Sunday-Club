@@ -292,3 +292,7 @@ select {
     transition: none;
   }
 }
+
+svg[aria-hidden="true"] {
+  flex-shrink: 0;
+}

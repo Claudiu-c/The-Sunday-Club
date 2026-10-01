@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { ArrowUpRightIcon } from "@/components/ui/Icons";
 
 const links = [
   { label: "Services", href: "/services" },
@@ -111,7 +112,10 @@ export default function Header() {
           aria-current={pathname === "/contact" ? "page" : undefined}
           onClick={closeMenu}
         >
-          Join the Club <span aria-hidden="true">↗</span>
+          Join the Club{" "}
+          <span aria-hidden="true">
+            <ArrowUpRightIcon />
+          </span>
         </Link>
       </nav>
     </header>

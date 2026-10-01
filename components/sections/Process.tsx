@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./Process.module.css";
+import { ArrowUpRightIcon } from "@/components/ui/Icons";
 
 const steps = [
   {
@@ -90,7 +91,9 @@ export default function Process({ detailed = false }: ProcessProps) {
 
           <Link href={detailed ? "/contact" : "/approach"}>
             {detailed ? "Start with a hello" : "Explore our approach"}
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true">
+              <ArrowUpRightIcon />
+            </span>
           </Link>
         </div>
       </div>

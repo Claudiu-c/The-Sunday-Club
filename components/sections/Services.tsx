@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Services.module.css";
+import { ArrowUpRightIcon } from "@/components/ui/Icons";
 
 const services = [
   {
@@ -208,7 +209,9 @@ export default function Services() {
                     aria-label={`Enquire about ${service.name}`}
                   >
                     Let&apos;s talk
-                    <span aria-hidden="true">↗</span>
+                    <span aria-hidden="true">
+                      <ArrowUpRightIcon />
+                    </span>
                   </Link>
                 </div>
               </div>
@@ -303,7 +306,10 @@ export default function Services() {
           </div>
 
           <Link href="/contact" className={styles.cta}>
-            Find your way in <span aria-hidden="true">↗</span>
+            Find your way in{" "}
+            <span aria-hidden="true">
+              <ArrowUpRightIcon />
+            </span>
           </Link>
         </div>
       </div>

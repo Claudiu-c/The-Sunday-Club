@@ -348,6 +348,12 @@
   color: var(--emerald);
 }
 
+.tickerTrack b {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
 .tickerTrack {
   display: flex;
   width: max-content;
@@ -386,6 +392,21 @@
   stroke-dasharray: 620;
   stroke-dashoffset: 620;
   animation: draw-scribble 1.5s 600ms ease forwards;
+}
+
+.eyebrowMark,
+.primaryCta > span,
+.secondaryCta > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.eyebrowMark svg,
+.primaryCta svg,
+.secondaryCta svg {
+  display: block;
 }
 
 @keyframes draw-scribble {

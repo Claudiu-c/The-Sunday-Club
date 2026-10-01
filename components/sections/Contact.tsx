@@ -2,6 +2,8 @@
 
 import { useState, type SyntheticEvent } from "react";
 import styles from "./Contact.module.css";
+import { ArrowUpRightIcon } from "@/components/ui/Icons";
+import { ClubStarIcon } from "@/components/ui/Icons";
 
 export default function Contact() {
   const [status, setStatus] = useState<
@@ -77,7 +79,9 @@ export default function Contact() {
 
               <span className={styles.invitationBottom}>
                 STRATEGY · CONTENT · SOCIAL
-                <span>✳</span>
+                <span>
+                  <ClubStarIcon />
+                </span>
               </span>
             </div>
           </div>
@@ -242,7 +246,9 @@ export default function Contact() {
                   {status === "sending"
                     ? "Sending your application..."
                     : "Send your application"}
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true">
+                    <ArrowUpRightIcon />
+                  </span>
                 </button>
 
                 <p

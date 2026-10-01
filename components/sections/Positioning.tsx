@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Positioning.module.css";
+import {
+  ArrowUpRightIcon,
+  ClubStarIcon,
+  ArrowDownIcon,
+} from "@/components/ui/Icons";
 
 type PositioningProps = {
   variant?: "preview" | "page";
@@ -54,7 +59,9 @@ export default function Positioning({
         <div className={styles.layout}>
           <div className={styles.copy}>
             <p className={styles.kicker}>
-              <span aria-hidden="true">✳</span>
+              <span aria-hidden="true">
+                <ClubStarIcon />
+              </span>
               The Sunday Club perspective
             </p>
 
@@ -86,14 +93,18 @@ export default function Positioning({
             {!isPage && showApproachLink && (
               <Link href="/approach" className={styles.link}>
                 Discover our approach
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true">
+                  <ArrowUpRightIcon />
+                </span>
               </Link>
             )}
 
             {isPage && (
               <a href="#process" className={styles.link}>
                 See how we work
-                <span aria-hidden="true">↓</span>
+                <span aria-hidden="true">
+                  <ArrowDownIcon width={16} height={16} />
+                </span>
               </a>
             )}
           </div>
@@ -116,7 +127,9 @@ export default function Positioning({
 
             <figcaption className={styles.caption}>
               <span>Good content starts before the camera.</span>
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ArrowUpRightIcon />
+              </span>
             </figcaption>
           </figure>
         </div>

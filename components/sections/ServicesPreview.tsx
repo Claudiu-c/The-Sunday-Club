@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ServicesPreview.module.css";
+import { ArrowUpRightIcon } from "@/components/ui/Icons";
 
 const services = [
   {
@@ -92,7 +93,9 @@ export default function ServicesPreview() {
                   aria-label={`Explore ${service.name}`}
                 >
                   Explore this service
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true">
+                    <ArrowUpRightIcon />
+                  </span>
                 </Link>
               </div>
             </article>
@@ -103,7 +106,10 @@ export default function ServicesPreview() {
           <p>Not sure where to start? Let&apos;s figure it out together.</p>
 
           <Link href="/contact">
-            Find your way in <span aria-hidden="true">↗</span>
+            Find your way in{" "}
+            <span aria-hidden="true">
+              <ArrowUpRightIcon />
+            </span>
           </Link>
         </div>
       </div>
