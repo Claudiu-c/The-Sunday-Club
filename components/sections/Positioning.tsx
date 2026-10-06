@@ -115,7 +115,7 @@ export default function Positioning({
                 src="/images/approach-behind-scenes.webp"
                 alt="The team arranging props behind the scenes"
                 fill
-                sizes="(max-width: 760px) 90vw, 40vw"
+                sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1300px) 36vw, 460px"
                 className={styles.image}
                 loading={isPage ? "eager" : "lazy"}
               />

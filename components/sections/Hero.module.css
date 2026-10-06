@@ -66,9 +66,9 @@
   display: block;
   width: max-content;
   max-width: 100%;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: hero-reveal 850ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 1;
+  transform: translateY(18px);
+  animation: hero-reveal 650ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .line:nth-child(2) {

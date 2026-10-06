@@ -122,7 +122,8 @@ export default function Hero() {
               src="/images/hero-main-hq.webp"
               alt="The Sunday Club sign held up in the sunshine"
               fill
-              unoptimized
+              sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1800px) 40vw, 720px"
+              quality={85}
               loading="eager"
               fetchPriority="high"
             />
