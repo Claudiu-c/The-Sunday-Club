@@ -20,7 +20,7 @@ const services = [
     slug: "the-sunday-session",
     type: "The production",
     name: "The Sunday Session",
-    promise: "Make something worth stopping for.",
+    promise: "Make something worth stopping the scroll for.",
     description:
       "From concept to shoot, content that looks and feels like your brand.",
     image: "/images/session-production.webp",

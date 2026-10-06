@@ -79,7 +79,7 @@ export default function Positioning({
 
             <p className={styles.detail}>
               We bring strategy, creative direction and content together to give
-              people a reason to follow your brand — and keep coming back.
+              people a reason to follow your brand and keep coming back.
             </p>
 
             {isPage && (

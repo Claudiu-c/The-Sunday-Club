@@ -45,7 +45,7 @@
 
 .copy h2 {
   margin: 0;
-  font-size: clamp(2.8rem, 4.6vw, 5.4rem);
+  font-size: clamp(2.6rem, 4.3vw, 5rem);
   font-weight: 400;
   line-height: 1.02;
   letter-spacing: -0.055em;
@@ -166,7 +166,8 @@
   }
 
   .copy h2 {
-    font-size: clamp(2.5rem, 9vw, 4rem);
+    font-size: clamp(2rem, 8vw, 3.4rem);
+    line-height: 1.06;
   }
 
   .description {

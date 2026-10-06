@@ -42,8 +42,8 @@ export default function About({ variant = "preview" }: AboutProps) {
 
             <p className={styles.body}>
               We bring strategy, creative direction and content together to
-              build brands with personality — and a presence people actually
-              want to follow.
+              build brands with personality and a presence people actually want
+              to follow.
             </p>
 
             <Link className={styles.link} href={isPage ? "/contact" : "/about"}>

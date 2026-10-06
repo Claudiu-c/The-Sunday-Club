@@ -56,9 +56,9 @@ export default function Contact() {
             <h1>
               LET&apos;S MAKE
               <br />
-              SOMETHING
+              YOUR BRAND
               <br />
-              <em>MATTER.</em>
+              <em>WORTH FOLLOWING.</em>
             </h1>
 
             <p className={styles.description}>

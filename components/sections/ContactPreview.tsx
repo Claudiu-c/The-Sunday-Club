@@ -25,7 +25,9 @@ export default function ContactPreview() {
             <h2 id="contact-preview-title">
               Let&apos;s make
               <br />
-              something <em>matter.</em>
+              your brand
+              <br />
+              <em>worth following.</em>
             </h2>
 
             <p className={styles.description}>

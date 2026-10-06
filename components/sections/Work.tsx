@@ -47,9 +47,9 @@ export default function Work({ variant = "preview" }: WorkProps) {
             </p>
 
             <Heading id="work-title" className={styles.heading}>
-              Less ordinary.
+              See what
               <br />
-              <em>More memorable.</em>
+              <em>We&apos;re made of.</em>
             </Heading>
 
             <p className={styles.description}>

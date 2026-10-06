@@ -41,7 +41,7 @@ const services = [
     slug: "the-sunday-session",
     type: "The production",
     name: "The Sunday Session",
-    promise: "Make something worth stopping for.",
+    promise: "Make something worth stopping the scroll for.",
     description:
       "For brands ready to turn a creative direction into content. Strategy and production come together in a dedicated project.",
     image: "/images/session-production.webp",

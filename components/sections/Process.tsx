@@ -13,7 +13,7 @@ const steps = [
   {
     number: "02",
     title: "We strategize.",
-    summary: "Research and a clear creative direction.",
+    summary: "Research, strategy and creative direction.",
     detail:
       "Research, positioning and a creative direction with a point of view.",
   },
