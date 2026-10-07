@@ -55,7 +55,7 @@ export default function Header() {
   return (
     <header className={`site-header ${menuOpen ? "menu-open" : ""}`}>
       <Link
-        href="/"
+        href="/#top"
         className="site-logo"
         aria-label="The Sunday Club home"
         onClick={closeMenu}
@@ -92,7 +92,7 @@ export default function Header() {
       >
         {links.map((link) => {
           const active =
-            pathname === link.href || pathname.startsWith(`${link.href}/`);
+            pathname === link.href || pathname.startsWith(`${link.href}/#top`);
 
           return (
             <Link
@@ -107,7 +107,7 @@ export default function Header() {
         })}
 
         <Link
-          href="/contact"
+          href="/contact#top"
           className="nav-cta"
           aria-current={pathname === "/contact" ? "page" : undefined}
           onClick={closeMenu}

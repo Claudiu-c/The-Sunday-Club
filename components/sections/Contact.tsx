@@ -1,21 +1,38 @@
 "use client";
 
-import { useState, type SyntheticEvent } from "react";
+import { useRef, useState, type SyntheticEvent } from "react";
 import styles from "./Contact.module.css";
 import { ArrowUpRightIcon } from "@/components/ui/Icons";
 import { ClubStarIcon } from "@/components/ui/Icons";
+import Turnstile from "@/components/ui/Turnstile";
 
 export default function Contact() {
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
+
+  const submittingRef = useRef(false);
 
   async function handleSubmit(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    if (submittingRef.current) return;
 
+    if (!turnstileToken) {
+      setStatus("error");
+      return;
+    }
+
+    const form = event.currentTarget;
+
+    const data = {
+      ...Object.fromEntries(new FormData(form).entries()),
+      turnstileToken,
+    };
+
+    submittingRef.current = true;
     setStatus("sending");
 
     try {
@@ -36,6 +53,11 @@ export default function Contact() {
       setStatus("success");
     } catch {
       setStatus("error");
+    } finally {
+      submittingRef.current = false;
+
+      setTurnstileToken(null);
+      setTurnstileResetKey((current) => current + 1);
     }
   }
 
@@ -236,12 +258,17 @@ export default function Contact() {
                   placeholder="We're all ears."
                 />
               </div>
-
+              <div className={styles.verification}>
+                <Turnstile
+                  onToken={setTurnstileToken}
+                  resetKey={turnstileResetKey}
+                />
+              </div>
               <div className={styles.submitArea}>
                 <button
                   className={styles.submit}
                   type="submit"
-                  disabled={status === "sending"}
+                  disabled={status === "sending" || !turnstileToken}
                 >
                   {status === "sending"
                     ? "Sending your application..."

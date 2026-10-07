@@ -315,6 +315,18 @@
   background: rgb(184 94 94 / 10%);
 }
 
+.verification {
+  min-width: 0;
+  min-height: 65px;
+}
+
+.verification p {
+  margin: 12px 0 0;
+  color: var(--emerald);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
 @media (max-width: 1100px) {
   .layout {
     grid-template-columns: 1fr;

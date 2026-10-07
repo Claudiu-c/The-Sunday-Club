@@ -6,6 +6,7 @@ import {
   ClubStarIcon,
   ArrowDownIcon,
 } from "@/components/ui/Icons";
+import Reveal from "@/components/ui/Reveal";
 
 type PositioningProps = {
   variant?: "preview" | "page";
@@ -57,7 +58,7 @@ export default function Positioning({
         </div>
 
         <div className={styles.layout}>
-          <div className={styles.copy}>
+          <Reveal className={styles.copy} variant="text">
             <p className={styles.kicker}>
               <span aria-hidden="true">
                 <ClubStarIcon />
@@ -107,10 +108,10 @@ export default function Positioning({
                 </span>
               </a>
             )}
-          </div>
+          </Reveal>
 
           <figure className={styles.visual}>
-            <div className={styles.imageWrap}>
+            <Reveal className={styles.imageWrap} variant="image" delay={180}>
               <Image
                 src="/images/approach-behind-scenes.webp"
                 alt="The team arranging props behind the scenes"
@@ -123,7 +124,7 @@ export default function Positioning({
               <span className={styles.imageIndex} aria-hidden="true">
                 THE THINKING / THE MAKING
               </span>
-            </div>
+            </Reveal>
 
             <figcaption className={styles.caption}>
               <span>Good content starts before the camera.</span>

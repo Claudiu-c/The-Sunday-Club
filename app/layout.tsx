@@ -3,6 +3,7 @@ import { Montserrat, Playfair_Display_SC } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
+import { siteUrl, siteName, siteDescription, isIndexable } from "@/lib/site";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -18,37 +19,30 @@ const playfair = Playfair_Display_SC({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ||
-      (process.env.VERCEL_URL
-        ? `https://${process.env.VERCEL_URL}`
-        : "http://localhost:3000"),
-  ),
+  metadataBase: new URL(siteUrl),
 
   title: "The Sunday Club | Creative Social Media Agency",
 
-  description:
-    "Strategy. Content. Social. The Sunday Club creates brands people want to be part of.",
+  description: siteDescription,
 
   openGraph: {
     type: "website",
     locale: "en_GB",
-    siteName: "The Sunday Club",
+    siteName,
     title: "The Sunday Club | Creative Social Media Agency",
-    description:
-      "Creating brands people want to be part of. Strategy, creative direction and content by The Sunday Club.",
+    description: siteDescription,
   },
 
   twitter: {
     card: "summary_large_image",
     title: "The Sunday Club | Creative Social Media Agency",
-    description:
-      "Creating brands people want to be part of. Strategy. Content. Social.",
+    description: siteDescription,
+    images: ["/opengraph-image.png"],
   },
 
   robots: {
-    index: false,
-    follow: false,
+    index: isIndexable,
+    follow: isIndexable,
   },
 };
 
@@ -56,8 +50,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={`${montserrat.variable} ${playfair.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth">
+      <body id="top" className={`${montserrat.variable} ${playfair.variable}`}>
         <Header />
         {children}
         <Footer />

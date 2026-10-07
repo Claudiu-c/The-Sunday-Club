@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./About.module.css";
 import { ArrowUpRightIcon } from "@/components/ui/Icons";
+import Reveal from "@/components/ui/Reveal";
 
 type AboutProps = {
   variant?: "preview" | "page";
@@ -26,7 +27,7 @@ export default function About({ variant = "preview" }: AboutProps) {
         </div>
 
         <div className={styles.layout}>
-          <div className={styles.story}>
+          <Reveal className={styles.story} variant="text">
             <p className={styles.eyebrow}>A little about us</p>
 
             <Heading id="about-title" className={styles.heading}>
@@ -52,10 +53,10 @@ export default function About({ variant = "preview" }: AboutProps) {
                 <ArrowUpRightIcon />
               </span>
             </Link>
-          </div>
+          </Reveal>
 
           <figure className={styles.founders}>
-            <div className={styles.photoWrap}>
+            <Reveal className={styles.photoWrap} variant="image" delay={160}>
               <Image
                 src="/images/founders-together.webp"
                 alt="The Sunday Club founders sitting together on a sofa"
@@ -68,7 +69,7 @@ export default function About({ variant = "preview" }: AboutProps) {
               <span className={styles.photoLabel}>
                 THE PEOPLE BEHIND THE CLUB
               </span>
-            </div>
+            </Reveal>
 
             <figcaption className={styles.caption}>
               <span>Maria &amp; Andreea</span>
@@ -80,7 +81,7 @@ export default function About({ variant = "preview" }: AboutProps) {
         {isPage && (
           <>
             <section className={styles.origin} aria-labelledby="origin-title">
-              <div>
+              <Reveal variant="text">
                 <p className={styles.eyebrow}>Why we built the club</p>
 
                 <h2 id="origin-title">
@@ -88,9 +89,9 @@ export default function About({ variant = "preview" }: AboutProps) {
                   <br />
                   <em>personality.</em>
                 </h2>
-              </div>
+              </Reveal>
 
-              <div className={styles.originCopy}>
+              <Reveal className={styles.originCopy} variant="text" delay={140}>
                 <p>
                   We created The Sunday Club for brands that want more than an
                   online presence. Brands with something to say, a point of view
@@ -105,11 +106,11 @@ export default function About({ variant = "preview" }: AboutProps) {
                 <p className={styles.philosophy}>
                   Creating brands people want to be part of.
                 </p>
-              </div>
+              </Reveal>
             </section>
 
             <section className={styles.film} aria-labelledby="film-title">
-              <div className={styles.filmCopy}>
+              <Reveal className={styles.filmCopy} variant="text">
                 <p className={styles.eyebrow}>Inside our world</p>
 
                 <h2 id="film-title">
@@ -119,7 +120,7 @@ export default function About({ variant = "preview" }: AboutProps) {
                 </h2>
 
                 <p>A closer look at the visual identity behind the club.</p>
-              </div>
+              </Reveal>
 
               <video
                 className={styles.video}
@@ -127,7 +128,6 @@ export default function About({ variant = "preview" }: AboutProps) {
                 muted
                 loop
                 playsInline
-                controls
                 preload="metadata"
                 poster="/images/sunday-logo-poster.webp"
                 aria-label="The Sunday Club visual identity film"

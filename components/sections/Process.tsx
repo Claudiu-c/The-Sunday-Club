@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./Process.module.css";
 import { ArrowUpRightIcon } from "@/components/ui/Icons";
+import Reveal from "@/components/ui/Reveal";
 
 const steps = [
   {
@@ -54,7 +55,7 @@ export default function Process({ detailed = false }: ProcessProps) {
           <span>Thoughtful from the first hello</span>
         </div>
 
-        <div className={styles.intro}>
+        <Reveal className={styles.intro} variant="text">
           <div>
             <p className={styles.eyebrow}>Behind the scenes</p>
 
@@ -69,19 +70,21 @@ export default function Process({ detailed = false }: ProcessProps) {
             A clear process, room for good ideas, and a shared direction from
             the start.
           </p>
-        </div>
+        </Reveal>
 
         <ol className={styles.steps}>
-          {steps.map((step) => (
-            <li className={styles.step} key={step.number}>
-              <span className={styles.number} aria-hidden="true">
-                {step.number}
-              </span>
+          {steps.map((step, index) => (
+            <li key={step.number}>
+              <Reveal className={styles.step} delay={detailed ? 0 : index * 90}>
+                <span className={styles.number} aria-hidden="true">
+                  {step.number}
+                </span>
 
-              <div>
-                <h3>{step.title}</h3>
-                <p>{detailed ? step.detail : step.summary}</p>
-              </div>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{detailed ? step.detail : step.summary}</p>
+                </div>
+              </Reveal>
             </li>
           ))}
         </ol>

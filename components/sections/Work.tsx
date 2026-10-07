@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./Work.module.css";
 import { ArrowUpRightIcon } from "@/components/ui/Icons";
+import Reveal from "@/components/ui/Reveal";
 
 type WorkProps = {
   variant?: "preview" | "page";
@@ -21,7 +22,7 @@ export default function Work({ variant = "preview" }: WorkProps) {
 
         <div className={styles.layout}>
           <figure className={styles.visual}>
-            <div className={styles.imageFrame}>
+            <Reveal className={styles.imageFrame} variant="image">
               <div className={styles.imageWrap}>
                 <Image
                   src="/images/portfolio-invitation.webp"
@@ -31,7 +32,7 @@ export default function Work({ variant = "preview" }: WorkProps) {
                   className={styles.image}
                 />
               </div>
-            </div>
+            </Reveal>
 
             <figcaption className={styles.caption}>
               <span>A glimpse of The Sunday Club.</span>
@@ -41,7 +42,7 @@ export default function Work({ variant = "preview" }: WorkProps) {
             </figcaption>
           </figure>
 
-          <div className={styles.copy}>
+          <Reveal className={styles.copy} variant="text" delay={180}>
             <p className={styles.eyebrow}>
               Your invitation to take a closer look
             </p>
@@ -80,7 +81,7 @@ export default function Work({ variant = "preview" }: WorkProps) {
             <span className={styles.availability}>
               Portfolio available on request
             </span>
-          </div>
+          </Reveal>
         </div>
 
         {isPage && (

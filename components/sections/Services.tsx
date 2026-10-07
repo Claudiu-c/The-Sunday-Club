@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./Services.module.css";
 import { ArrowUpRightIcon } from "@/components/ui/Icons";
+import Reveal from "@/components/ui/Reveal";
 
 const services = [
   {
@@ -174,7 +175,7 @@ export default function Services() {
               key={service.slug}
               aria-labelledby={`${service.slug}-title`}
             >
-              <div className={styles.copy}>
+              <Reveal className={styles.copy} variant="text">
                 <p className={styles.serviceMeta}>
                   <span>{service.number}</span>
                   {service.type}
@@ -214,10 +215,14 @@ export default function Services() {
                     </span>
                   </Link>
                 </div>
-              </div>
+              </Reveal>
 
               <figure className={styles.visual}>
-                <div className={styles.imageWrap}>
+                <Reveal
+                  className={styles.imageWrap}
+                  variant="image"
+                  delay={160}
+                >
                   <Image
                     src={service.image}
                     alt={service.imageAlt}
@@ -225,7 +230,7 @@ export default function Services() {
                     sizes="(max-width: 900px) 90vw, 40vw"
                     className={styles.image}
                   />
-                </div>
+                </Reveal>
 
                 <figcaption>
                   <span>THE SUNDAY CLUB</span>
@@ -242,7 +247,7 @@ export default function Services() {
           className={styles.comparison}
           aria-labelledby="comparison-title"
         >
-          <div className={styles.comparisonHeading}>
+          <Reveal className={styles.comparisonHeading} variant="text">
             <p className={styles.eyebrow}>A closer look</p>
 
             <h2 id="comparison-title">
@@ -250,7 +255,7 @@ export default function Services() {
             </h2>
 
             <p>See how the three ways of working compare.</p>
-          </div>
+          </Reveal>
 
           <p className={styles.tableHint}>
             <span aria-hidden="true">↔</span>
@@ -285,9 +290,50 @@ export default function Services() {
                   <tr key={row.label}>
                     <th scope="row">{row.label}</th>
 
-                    {row.values.map((value, index) => (
-                      <td key={services[index].slug}>{value}</td>
-                    ))}
+                    {row.values.map((value, index) => {
+                      const included = value === "Included" || value === "Yes";
+                      const excluded =
+                        value === "Not included" || value === "No";
+
+                      return (
+                        <td key={services[index].slug}>
+                          {included || excluded ? (
+                            <span
+                              className={`${styles.featureStatus} ${
+                                included ? styles.included : styles.excluded
+                              }`}
+                            >
+                              <span
+                                className={styles.statusIcon}
+                                aria-hidden="true"
+                              >
+                                <svg
+                                  width="16"
+                                  height="16"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  focusable="false"
+                                >
+                                  <path
+                                    d={included ? "M5 12l4 4L19 6" : "M5 12h14"}
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                  />
+                                </svg>
+                              </span>
+
+                              {value}
+                            </span>
+                          ) : (
+                            <span className={styles.collaborationType}>
+                              {value}
+                            </span>
+                          )}
+                        </td>
+                      );
+                    })}
                   </tr>
                 ))}
               </tbody>

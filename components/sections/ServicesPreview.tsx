@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./ServicesPreview.module.css";
 import { ArrowUpRightIcon } from "@/components/ui/Icons";
+import Reveal from "@/components/ui/Reveal";
 
 const services = [
   {
@@ -52,7 +53,7 @@ export default function ServicesPreview() {
           <span>Three ways to work together</span>
         </div>
 
-        <div className={styles.headingRow}>
+        <Reveal className={styles.headingRow} variant="text">
           <h2 id="services-title">
             Three ways <em>in.</em>
           </h2>
@@ -61,12 +62,16 @@ export default function ServicesPreview() {
             A clear direction. A dedicated shoot. An ongoing creative
             partnership. Find your way into the club.
           </p>
-        </div>
+        </Reveal>
 
         <div className={styles.list}>
-          {services.map((service) => (
+          {services.map((service, index) => (
             <article className={styles.offer} key={service.slug}>
-              <div className={styles.imageWrap}>
+              <Reveal
+                className={styles.imageWrap}
+                variant="image"
+                delay={index * 140}
+              >
                 <Image
                   src={service.image}
                   alt={service.imageAlt}
@@ -74,9 +79,13 @@ export default function ServicesPreview() {
                   sizes="(max-width: 760px) 100px, 30vw"
                   className={styles.image}
                 />
-              </div>
+              </Reveal>
 
-              <div className={styles.copy}>
+              <Reveal
+                className={styles.copy}
+                variant="text"
+                delay={100 + index * 140}
+              >
                 <div className={styles.serviceMeta}>
                   <span>{service.number}</span>
                   <span>{service.type}</span>
@@ -97,7 +106,7 @@ export default function ServicesPreview() {
                     <ArrowUpRightIcon />
                   </span>
                 </Link>
-              </div>
+              </Reveal>
             </article>
           ))}
         </div>

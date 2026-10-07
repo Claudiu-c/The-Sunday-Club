@@ -4,7 +4,10 @@ import Services from "@/components/sections/Services";
 export const metadata: Metadata = {
   title: "Services | The Sunday Club",
   description:
-    "Explore The Blueprint, The Sunday Session and The Club Engine — three ways to work with The Sunday Club.",
+    "Find your way into The Sunday Club: brand strategy with The Blueprint, content production with The Sunday Session, or an ongoing partnership with The Club Engine.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesPage() {

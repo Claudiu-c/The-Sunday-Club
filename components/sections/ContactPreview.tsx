@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./ContactPreview.module.css";
 import { ArrowUpRightIcon } from "@/components/ui/Icons";
+import Reveal from "@/components/ui/Reveal";
 
 export default function ContactPreview() {
   return (
@@ -17,7 +18,7 @@ export default function ContactPreview() {
         </div>
 
         <div className={styles.layout}>
-          <div className={styles.copy}>
+          <Reveal className={styles.copy} variant="text">
             <p className={styles.eyebrow}>
               This could be the start of something
             </p>
@@ -34,9 +35,9 @@ export default function ContactPreview() {
               Your brand, your ambitions, our next conversation. Tell us what
               you&apos;re dreaming up.
             </p>
-          </div>
+          </Reveal>
 
-          <div className={styles.invitation}>
+          <Reveal className={styles.invitation} direction="right" delay={180}>
             <div className={styles.invitationTop}>
               <span>The Sunday Club</span>
 
@@ -65,7 +66,7 @@ export default function ContactPreview() {
             <a href="mailto:hello@thesundayclub.info" className={styles.email}>
               hello@thesundayclub.info
             </a>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

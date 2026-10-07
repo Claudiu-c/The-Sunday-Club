@@ -67,6 +67,10 @@
   list-style: none;
 }
 
+.steps > li {
+  min-width: 0;
+}
+
 .step {
   min-width: 0;
   padding-top: 18px;

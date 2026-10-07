@@ -366,6 +366,77 @@
   display: none;
 }
 
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead th:not(:first-child),
+.table tbody td {
+  text-align: center;
+}
+
+.table tbody th,
+.table tbody td {
+  padding: 20px 16px;
+  vertical-align: middle;
+}
+
+.table tbody th {
+  text-align: left;
+  line-height: 1.5;
+}
+
+.table tbody tr:nth-child(even) {
+  background: rgb(14 92 74 / 4%);
+}
+
+.featureStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.statusIcon {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+}
+
+.included {
+  color: var(--emerald);
+  font-weight: 600;
+}
+
+.included .statusIcon {
+  background: rgb(14 92 74 / 12%);
+}
+
+.excluded {
+  color: #655d58;
+}
+
+.excluded .statusIcon {
+  background: rgb(35 35 35 / 6%);
+}
+
+.collaborationType {
+  display: inline-block;
+  padding: 7px 12px;
+  border: 1px solid rgb(14 92 74 / 20%);
+  color: var(--emerald);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
 @media (max-width: 900px) {
   .offer {
     grid-template-columns: minmax(0, 1fr);
